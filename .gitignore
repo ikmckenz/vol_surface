@@ -1,5 +1,11 @@
 # Project Stuff
 .idea/
+pictures/
+saved_data/
+
+# Emacs stuff
+*~
+*#
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
