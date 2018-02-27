@@ -1,7 +1,6 @@
 import pandas as pd
 import requests
 import json
-import pickle
 
 def yahoo_opt_clean(x, type):
     x = pd.io.json.json_normalize(x['optionChain']['result'][0]['options'][0][type])
@@ -37,3 +36,8 @@ def get_options():
         else:
             break
     return options, current_price, current_date
+
+if __name__ == '__main__':
+    options, current_price, date = get_options()
+    pathname = 'saved_data/options_' + str(date) + '.csv'
+    options.to_csv(pathname, index=False)
