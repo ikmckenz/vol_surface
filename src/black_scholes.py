@@ -47,8 +47,8 @@ def bs_estimate(iv, frame, current_price, r=0.0188):
             j += 1
         j = 0
         i += 1
-    # Replace 0 with 1 penny to stop blowing up
-    bs_price[bs_price <= 0.000001] = 0.01
+    # Replace 0 with 0.1 penny to stop blowing up
+    bs_price[bs_price <= 0.000001] = 0.001
     return bs_price
 
 
@@ -63,6 +63,6 @@ def vega_estimate(iv, frame, current_price, r=0.0188):
             j += 1
         j = 0
         i += 1
-    # Replace 0 with 0.1% to stop blowing up
-    vega[vega <= 0.000001] = 0.001
+    # Replace 0 with 0.01% to stop blowing up
+    vega[vega <= 0.000001] = 0.0001
     return vega
