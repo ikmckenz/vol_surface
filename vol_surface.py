@@ -42,8 +42,11 @@ options.index = (options.index - date).days
 # Drop days farther than one year
 options = options[options.index < 366]
 
+# Estimate r
+r = 0.0188
+
 # Now, for the real calculations and things
-iv = calc_iv(options, current_price)
+iv = calc_iv(options, current_price, r)
 
 # Now, let's create the nice plot
 X = list(options)

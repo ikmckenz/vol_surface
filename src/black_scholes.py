@@ -33,7 +33,7 @@ def option_vega(S, K, r, sigma, T):
 
 
 # Now the more serious functions
-def bs_estimate(iv, frame, current_price, r=0.0188):
+def bs_estimate(iv, frame, current_price, r):
     df = frame.copy(deep=True)
     bs_price = np.zeros(df.shape)
     i = 0
@@ -52,7 +52,7 @@ def bs_estimate(iv, frame, current_price, r=0.0188):
     return bs_price
 
 
-def vega_estimate(iv, frame, current_price, r=0.0188):
+def vega_estimate(iv, frame, current_price, r):
     df = frame.copy(deep=True)
     vega = np.zeros(df.shape)
     i = 0

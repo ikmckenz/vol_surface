@@ -123,10 +123,9 @@ class TestVolSurface(unittest.TestCase):
 
         # Then, try and reverse engineer the vol
         options = pd.DataFrame(my_prices, columns=options.columns, index=options.index)
-        iv = calc_iv(options, current_price)
+        iv = calc_iv(options, current_price, r)
         res = iv - sigma
-        print(res)
-        self.assertTrue(max(-1*res.min(), res.max()) < 0.0001)
+        self.assertTrue(max(-1*res.min(), res.max()) < 0.00001)
 
 
 if __name__ == '__main__':
