@@ -1,0 +1,2 @@
+0 9-15 * * 1-5 /home/ubuntu/collect_data.sh >> /home/ubuntu/options.log 2>&1
+0 16 * * 1-5 /home/ubuntu/create_plot.sh >> /home/ubuntu/options.log 2>&1
