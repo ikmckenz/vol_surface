@@ -60,6 +60,6 @@ ax.plot_surface(X, Y, iv, cmap=cm.coolwarm)
 ax.xaxis.set_label_text('Strike')
 ax.yaxis.set_label_text('Days until expiry')
 date = dt.datetime.strftime(date, "%Y-%m-%d")
-title_text = 'Implied volatility on %s' % date
+title_text = 'Implied Volatility on %s' % date
 ax.set_title(title_text)
 plt.savefig('pictures/iv_%s' % date, bbox_inches='tight')
